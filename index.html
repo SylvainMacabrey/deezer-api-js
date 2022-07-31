@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Deezer App</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <form id="form-artiste">
+                <input type="text" id="artiste" name="artiste" autocomplete="off" value="" aria-labelledby="placeholder-artiste">
+                <label class="placeholder-text" for="artiste" id="placeholder-artiste">
+                    <div class="text">Artiste</div>
+                </label>
+                <div class="wrapper">
+                    <button class="button" type="button" id="button-submit">Rechercher</button>
+                </div>
+                <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+                <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                        </filter>
+                    </defs>
+                </svg>
+            </form>
+
+            <div id="tracklist">
+                <h1 id="h1-tracklist"></h1>
+                <div class="list"></div>
+            </div>
+
+            <template id="trackpanel">
+                <div class="panel">
+                    <img src="" alt="" class="panel-img" />
+                    <h4 class="panel-title"></h4>
+                    <p class="panel-index"></p>
+                    <p class="panel-duration"></p>
+                    <p class="panel-contributor"></p>
+                    <p class="panel-album"></p>
+                </div>
+            </template>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+
+</html>
